@@ -18,14 +18,14 @@ public class AssumptionsCalculatorTest {
     void test_divide_success() {
         int actual = calculator.divide(2,1);
         int expected = 2;
-        Assumptions.assumeTrue(expected != actual);
+        Assumptions.assumeTrue(expected == actual);
     }
 
     @Test
     void test_divide_failed() {
         int numerator = 2;
         int denominator = 0;
-        Assumptions.assumeTrue(denominator != 0);
+        Assumptions.assumeTrue(denominator == 0);
 
         Assertions.assertThrows(ArithmeticException.class, () -> {
             calculator.divide(numerator, denominator);
